@@ -38,14 +38,20 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hxe-r3-iW0">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hxe-r3-iW0">
                                 <rect key="frame" x="188" y="168" width="394" height="31"/>
                                 <animations/>
+                                <connections>
+                                    <action selector="taxPercentageChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="rmS-ed-PqZ"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tca-Eh-DmH">
                                 <rect key="frame" x="268" y="235" width="64" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t3F-rZ-by9"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbU-ou-MmF">
                                 <rect key="frame" x="20" y="273" width="560" height="319"/>
@@ -83,9 +89,19 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="L6x-v5-1eV"/>
+                    <connections>
+                        <outlet property="resultsTextView" destination="gbU-ou-MmF" id="Rk0-sR-RHT"/>
+                        <outlet property="taxPctLabel" destination="WfK-5u-3o3" id="zju-EW-MTR"/>
+                        <outlet property="taxPctSlider" destination="Hxe-r3-iW0" id="J78-EY-F3e"/>
+                        <outlet property="totalTextField" destination="YPG-8A-qCW" id="16k-I2-Xdc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="9Ye-dm-4Lm"/>
+                <tapGestureRecognizer id="9Ye-dm-4Lm">
+                    <connections>
+                        <action selector="viewTapped:" destination="BYZ-38-t0r" id="enP-9q-eVx"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1186" y="317"/>
         </scene>
