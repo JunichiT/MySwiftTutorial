@@ -53,13 +53,14 @@
                                     <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t3F-rZ-by9"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gbU-ou-MmF">
-                                <rect key="frame" x="20" y="273" width="560" height="319"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zpf-1d-k7T">
+                                <rect key="frame" x="20" y="291" width="560" height="289"/>
                                 <animations/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="nhM-jL-vsx"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -71,18 +72,18 @@
                             <constraint firstItem="Hxe-r3-iW0" firstAttribute="top" secondItem="YPG-8A-qCW" secondAttribute="bottom" constant="21" id="Acp-rL-nFy"/>
                             <constraint firstItem="MfQ-3E-la1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-5" id="Frc-2A-CXD"/>
                             <constraint firstItem="MfQ-3E-la1" firstAttribute="centerY" secondItem="YPG-8A-qCW" secondAttribute="centerY" id="He8-9g-ATl"/>
-                            <constraint firstItem="gbU-ou-MmF" firstAttribute="top" secondItem="Tca-Eh-DmH" secondAttribute="bottom" constant="8" symbolic="YES" id="JFe-sO-lbv"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gbU-ou-MmF" secondAttribute="bottom" constant="8" symbolic="YES" id="Ks7-AG-IEn"/>
+                            <constraint firstItem="Zpf-1d-k7T" firstAttribute="top" secondItem="Tca-Eh-DmH" secondAttribute="bottom" constant="26" id="KCC-fx-o1e"/>
                             <constraint firstItem="YPG-8A-qCW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="NYr-QC-j6C"/>
                             <constraint firstItem="Tca-Eh-DmH" firstAttribute="top" secondItem="Hxe-r3-iW0" secondAttribute="bottom" constant="37" id="OQL-ns-Fmu"/>
                             <constraint firstItem="MfQ-3E-la1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="57" id="Oy5-lo-X63"/>
-                            <constraint firstItem="Tca-Eh-DmH" firstAttribute="centerX" secondItem="gbU-ou-MmF" secondAttribute="centerX" id="Q4E-F5-nHS"/>
+                            <constraint firstItem="Tca-Eh-DmH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T8X-Sp-AyS"/>
                             <constraint firstItem="YPG-8A-qCW" firstAttribute="leading" secondItem="MfQ-3E-la1" secondAttribute="trailing" constant="17" id="WAY-wh-sCs"/>
+                            <constraint firstItem="Zpf-1d-k7T" firstAttribute="trailing" secondItem="Hxe-r3-iW0" secondAttribute="trailing" id="Xau-UE-L5u"/>
                             <constraint firstItem="YPG-8A-qCW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="YIX-r4-Hxx"/>
-                            <constraint firstItem="Hxe-r3-iW0" firstAttribute="trailing" secondItem="gbU-ou-MmF" secondAttribute="trailing" id="gqO-xw-jkG"/>
+                            <constraint firstItem="Tca-Eh-DmH" firstAttribute="centerX" secondItem="Zpf-1d-k7T" secondAttribute="centerX" id="dLM-Uy-Scr"/>
+                            <constraint firstAttribute="bottom" secondItem="Zpf-1d-k7T" secondAttribute="bottom" constant="20" symbolic="YES" id="jWW-Be-GU1"/>
                             <constraint firstItem="MfQ-3E-la1" firstAttribute="leading" secondItem="WfK-5u-3o3" secondAttribute="leading" id="ke0-Qs-gjH"/>
                             <constraint firstItem="Hxe-r3-iW0" firstAttribute="trailing" secondItem="YPG-8A-qCW" secondAttribute="trailing" id="mJ8-Lh-Uve"/>
-                            <constraint firstItem="gbU-ou-MmF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oJW-Ds-7rJ"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="9Ye-dm-4Lm" appends="YES" id="StP-xW-9Vz"/>
@@ -90,7 +91,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="L6x-v5-1eV"/>
                     <connections>
-                        <outlet property="resultsTextView" destination="gbU-ou-MmF" id="Rk0-sR-RHT"/>
+                        <outlet property="tableView" destination="Zpf-1d-k7T" id="3jd-pe-AFh"/>
                         <outlet property="taxPctLabel" destination="WfK-5u-3o3" id="zju-EW-MTR"/>
                         <outlet property="taxPctSlider" destination="Hxe-r3-iW0" id="J78-EY-F3e"/>
                         <outlet property="totalTextField" destination="YPG-8A-qCW" id="16k-I2-Xdc"/>
